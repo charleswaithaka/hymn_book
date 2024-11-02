@@ -1,0 +1,15 @@
+[
+    {
+        "title": "Amazing Grace",
+        "lyrics": "Amazing grace! How sweet the sound that saved a wretch like me..."
+    },
+    {
+        "title": "How Great Thou Art",
+        "lyrics": "O Lord my God, when I in awesome wonder consider all the worlds Thy hands have made..."
+    },
+    {
+        "title": "Be Thou My Vision",
+        "lyrics": "Be Thou my vision, O Lord of my heart; Naught be all else to me, save that Thou art..."
+    }
+    // Add more hymns as needed
+]
