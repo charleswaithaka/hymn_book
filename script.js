@@ -1,10 +1,3 @@
-const hymns = [
-    { title: "Amazing Grace", lyrics: "Amazing grace! How sweet the sound that saved a wretch like me..." },
-    { title: "How Great Thou Art", lyrics: "O Lord my God, when I in awesome wonder consider all the worlds Thy hands have made..." },
-    { title: "Be Thou My Vision", lyrics: "Be Thou my vision, O Lord of my heart; Naught be all else to me, save that Thou art..." },
-    // Add more hymns as needed
-];
-
 const hymnListElement = document.getElementById('hymn-list');
 const searchInput = document.getElementById('search');
 const songDetail = document.getElementById('song-detail');
@@ -44,5 +37,18 @@ searchInput.oninput = () => {
     displayHymnList(filteredHymns);
 };
 
-// Initial display of hymns
-displayHymnList(hymns);
+// Fetch the hymns from the JSON file
+fetch('hymns.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(hymns => {
+        // Initial display of hymns
+        displayHymnList(hymns);
+    })
+    .catch(error => {
+        console.error('There has been a problem with your fetch operation:', error);
+    });
